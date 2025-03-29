@@ -145,6 +145,9 @@ main {
       cursor: pointer;
     }
   }
+  .d_none{
+    display: none;
+  }
 }
 
 footer {

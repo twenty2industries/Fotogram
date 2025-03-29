@@ -17,5 +17,7 @@ for (let index = 0; index < myAlbum.length; index++) {
 }
 
 function logOutTester(event){
+  event.target.classList.toggle("d_none");
   console.log(event.target);
+  
 }
