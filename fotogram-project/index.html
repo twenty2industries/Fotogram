@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="renderImage.js"></script>
     <title>Fotogram</title>
   </head>
   <body>
@@ -12,7 +11,7 @@
       <div class="fotogramLogo"></div>
     </header>
 
-    <main>
+    <main onload="renderImages()">
       <div class="headlineArea">
       </div>
       <div id="collageArea">
@@ -35,6 +34,8 @@
       <div class="fotogramLogo"></div>
     </footer>
   </body>
+  <script src="renderImage.js"></script>
+
   <script src="logic.js"></script>
 
 </html>
