@@ -1,24 +1,21 @@
-/* 
-Versuch 1: Ein Array deklariert mit myAlbum = definiert durch eine nodelist welche in ein vollwertiges array umgewandelt wird.
-
-let myAlbum = Array.from(document.querySelectorAll('.photoAlbumInput'));
-
-myAlbum.addEventListener("click", dialogListener);
-
-function dialogListener () {
-  console.log(myAlbum);
-  }
- */
-
 let myAlbum = Array.from(document.querySelectorAll(".photoAlbumInput"));
+const mainSection = document.getElementById("mainSection");
+let duplicateElement = "";
 
 for (let index = 0; index < myAlbum.length; index++) {
   const element = myAlbum[index];
   element.addEventListener("click", toggleOverlay);
-  console.log(element);
 }
 
 function toggleOverlay(event) {
-  event.target.classList.toggle("overlayCollage");
-  console.log(event.target);
+  const eventDuplicate = event.target.cloneNode(true);
+  eventDuplicate.classList.toggle("overlayCollage");
+  contentRef.appendChild(eventDuplicate);
+  duplicateElement = eventDuplicate;
+  console.log(duplicateElement);
+  event.stopPropagation();
+}
+
+function closeOverlay(event) {
+  mainSection.addEventListener("click", renderImages);
 }
