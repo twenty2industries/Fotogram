@@ -15,5 +15,4 @@ function renderImages () {
         <div class="photoAlbumInput" id="pictureTwelve"></div>
 `;
 }
-
 renderImages();
