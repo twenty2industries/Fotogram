@@ -24,7 +24,8 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: rgba(84, 84, 84, 0.701);
+  background-color: rgba(84, 84, 84, 0.307);
+  box-shadow: 12px 12px 10px rgba(84, 84, 84, 0.205);
   width: 100%;
   height: 12rem;
   padding: 0rem 16rem;
@@ -61,79 +62,67 @@ main {
     justify-content: center;
     gap: 1.6rem;
     width: 100%;
-    padding: 0rem 10rem;
+    padding: 0rem 22%;
     flex-wrap: wrap;
 
     #pictureOne {
       background-image: url("collagePictures/C\ Snake\ -\ hintergrund.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureTwo {
       background-image: url("collagePictures/CARNAL.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureThree {
       background-image: url("collagePictures/Coup\ Life\ BLUR\ Smaller.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureFour {
       background-image: url("collagePictures/cross\ vs.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureFive {
       background-image: url("collagePictures/drugwar.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureSix {
       background-image: url("collagePictures/Embroided\ Logo\ weiss\ rot.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureSeven {
       background-image: url("collagePictures/SPIDER.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureEight {
       background-image: url("collagePictures/SPIDER\ CIRCLE.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureNine {
       background-image: url("collagePictures/Women\ Handgun.jpg");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureTen {
       background-image: url("collagePictures/women\ logo.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureEleven {
       background-image: url("collagePictures/Akuma\ PSD.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     #pictureTwelve {
       background-image: url("collagePictures/MOLOTOW.png");
-      background-size: cover;
-      background-position: center;
+
     }
 
     .photoAlbumInput {
@@ -143,20 +132,25 @@ main {
       border-radius: 1rem;
       transition: 0.3s ease-out;
       cursor: pointer;
+      background-size: cover;
+      background-position: center;
     }
 
     .photoAlbumInput:hover {
       border: 0.4rem solid;
       border-color: rgb(98, 98, 98);
+
     }
     .overlayCollage {
       position: absolute;
-      top: 6%;
-      bottom: 10%;
+      top: 4%;
       width: 32%;
       height: 80rem;
-      background-size: cover;
-      z-index: 1000;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 0.4rem solid;
+      border-color: rgba(255, 255, 255, 0.118);
     }
   }
 }
@@ -172,18 +166,14 @@ footer {
   flex-wrap: wrap;
   background-color: rgba(84, 84, 84, 0.701);
   width: 100%;
-  height: 17rem;
+  height: 10rem;
 
 
   .fotogramLogo {
     background-image: url("logos/couLogoBlack.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 17rem;
-    height: 17rem;
+    width: 10rem;
+    height: 10rem;
   }
-}
-
-@media (max-width: 681px) {
-
 }
