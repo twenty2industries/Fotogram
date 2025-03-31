@@ -16,6 +16,7 @@ html {
     display: flex;
     flex-direction: column;
     height: 100%;
+    align-items: center;
   }
 }
 
@@ -46,7 +47,7 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 8rem 0rem;
+  padding: 0rem 30rem;
 
   .headlineArea {
     margin-bottom: 4rem;
@@ -57,72 +58,58 @@ main {
   }
 
   .collageArea {
-    padding: 4.8rem 0rem;
     display: flex;
     justify-content: center;
     gap: 1.6rem;
     width: 100%;
-    padding: 0rem 22%;
     flex-wrap: wrap;
 
     #pictureOne {
       background-image: url("collagePictures/C\ Snake\ -\ hintergrund.png");
-
     }
 
     #pictureTwo {
       background-image: url("collagePictures/CARNAL.png");
-
     }
 
     #pictureThree {
       background-image: url("collagePictures/Coup\ Life\ BLUR\ Smaller.png");
-
     }
 
     #pictureFour {
       background-image: url("collagePictures/cross\ vs.png");
-
     }
 
     #pictureFive {
       background-image: url("collagePictures/drugwar.png");
-
     }
 
     #pictureSix {
       background-image: url("collagePictures/Embroided\ Logo\ weiss\ rot.png");
-
     }
 
     #pictureSeven {
       background-image: url("collagePictures/SPIDER.png");
-
     }
 
     #pictureEight {
       background-image: url("collagePictures/SPIDER\ CIRCLE.png");
-
     }
 
     #pictureNine {
       background-image: url("collagePictures/Women\ Handgun.jpg");
-
     }
 
     #pictureTen {
       background-image: url("collagePictures/women\ logo.png");
-
     }
 
     #pictureEleven {
       background-image: url("collagePictures/Akuma\ PSD.png");
-
     }
 
     #pictureTwelve {
       background-image: url("collagePictures/MOLOTOW.png");
-
     }
 
     .photoAlbumInput {
@@ -144,7 +131,7 @@ main {
     .overlayCollage {
       position: absolute;
       top: 4%;
-      width: 32%;
+      width: 80rem;
       height: 80rem;
       background-size: contain;
       background-position: center;
@@ -153,13 +140,13 @@ main {
       border-color: rgba(255, 255, 255, 0.118);
     }
   }
-  
+
   .buttonArea {
     background: url("collagePictures/akuma_red.png");
     font-size: 3.2rem;
     position: absolute;
-    bottom: 0;
-    width: 32%;
+    bottom: 10rem;
+    width: 70rem;
     height: 10rem;
     display: flex;
     justify-content: space-between;
@@ -172,15 +159,16 @@ main {
     padding: 0rem 3rem;
     border: 0.2rem solid;
     border-radius: 1rem;
-    
-    button{
+
+    button {
       width: 10%;
       height: 50%;
       background-color: black;
       color: white;
       border: none;
     }
-    button:hover{
+
+    button:hover {
       cursor: pointer;
       background-color: brown;
       transition: 0.5s ease-in-out;
@@ -190,7 +178,7 @@ main {
   .inputArea {
     display: flex;
     align-items: center;
-    justify-content:center ;
+    justify-content: center;
     background-color: rgb(0, 0, 0);
     color: white;
     width: 70%;
@@ -220,3 +208,76 @@ footer {
     height: 10rem;
   }
 }
+
+@media (max-width: 2061px) {
+  main {
+    flex-grow: 1;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 22rem;
+  }
+}
+
+@media (max-width: 1630px) {
+  main {
+    flex-grow: 1;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 7rem;
+  }
+}
+
+@media (max-width: 1080px) {
+#collageArea{
+  .photoAlbumInput {
+  }
+}
+main{
+  .collageArea {
+    gap: 4rem;
+  }
+  .buttonArea {
+    background: url("collagePictures/akuma_red.png");
+    font-size: 3.2rem;
+    position: absolute;
+    bottom: 5rem;
+    width: 70rem;
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    padding: 0rem 3rem;
+    border: 0.2rem solid;
+    border-radius: 1rem;
+}
+}
+}
+
+@media (max-width: 943px) {
+  #collageArea{
+    .photoAlbumInput {
+      background-color: rgb(0, 0, 0);
+      width: 24rem;
+      height: 24rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+  main{
+    .collageArea {
+      gap: 4rem;
+    }
+  }
+  
+  }
