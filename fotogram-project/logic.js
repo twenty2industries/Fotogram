@@ -34,7 +34,9 @@ function renderPicture(index) {
 
 function toggleOverlay(event) {
   const clickedSrc = event.target.src;
-  currentIndex = pictureCollection.indexOf(clickedSrc.replace("collagePictures/", "")); //speichert den aktuellen Index
+  currentIndex = pictureCollection.indexOf(
+    clickedSrc.replace("collagePictures/", "")
+  ); //speichert den aktuellen Index
   targetPicture.innerHTML = `<img class="targetPicture" src="${clickedSrc}">`;
   overlayDisplay.classList.remove("d_none");
 }
@@ -43,19 +45,18 @@ function closeOverlay() {
   overlayDisplay.classList.add("d_none");
 }
 
-
 function moveForward() {
   currentIndex++;
   if (currentIndex >= pictureCollection.length) {
-    currentIndex = 0; 
+    currentIndex = 0;
   }
   targetPicture.innerHTML = `<img class="targetPicture" src="collagePictures/${pictureCollection[currentIndex]}">`;
 }
 
 function moveBackward() {
-  currentIndex--; 
+  currentIndex--;
   if (currentIndex < 0) {
-    currentIndex = pictureCollection.length - 1; 
+    currentIndex = pictureCollection.length - 1;
   }
   targetPicture.innerHTML = `<img class="targetPicture" src="collagePictures/${pictureCollection[currentIndex]}">`;
 }
