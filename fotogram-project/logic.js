@@ -1,6 +1,6 @@
 const collageSection = document.getElementById("main_Section");
-const overlayDisplay = document.getElementById("big_Overlay");
-const targetPicture = document.getElementById("target_Picture");
+let overlayDisplay = document.getElementById("big_Overlay");
+let targetPicture = document.getElementById("target_Picture");
 let currentIndex = 0; // hier wird mit zahl gearbeitet nicht mit leeren Array
 
 const pictureCollection = [
