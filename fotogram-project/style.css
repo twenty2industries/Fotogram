@@ -114,8 +114,8 @@ main {
 
     .photoAlbumInput {
       background-color: rgb(0, 0, 0);
-      width: 28rem;
-      height: 28rem;
+      width: 20rem;
+      height: 20rem;
       border-radius: 1rem;
       cursor: pointer;
       background-size: cover;
@@ -232,38 +232,39 @@ footer {
 }
 
 @media (max-width: 1080px) {
-#collageArea{
-  .photoAlbumInput {
+  #collageArea {
+    .photoAlbumInput {}
   }
-}
-main{
-  .collageArea {
-    gap: 4rem;
+
+  main {
+    .collageArea {
+      gap: 4rem;
+    }
+
+    .buttonArea {
+      background: url("collagePictures/akuma_red.png");
+      font-size: 3.2rem;
+      position: absolute;
+      bottom: 5rem;
+      width: 70rem;
+      height: 10rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: black;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgb(255, 255, 255);
+      padding: 0rem 3rem;
+      border: 0.2rem solid;
+      border-radius: 1rem;
+    }
   }
-  .buttonArea {
-    background: url("collagePictures/akuma_red.png");
-    font-size: 3.2rem;
-    position: absolute;
-    bottom: 5rem;
-    width: 70rem;
-    height: 10rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: rgb(255, 255, 255);
-    padding: 0rem 3rem;
-    border: 0.2rem solid;
-    border-radius: 1rem;
-}
-}
 }
 
 @media (max-width: 943px) {
-  #collageArea{
+  #collageArea {
     .photoAlbumInput {
       background-color: rgb(0, 0, 0);
       width: 24rem;
@@ -274,10 +275,11 @@ main{
       background-position: center;
     }
   }
-  main{
+
+  main {
     .collageArea {
       gap: 4rem;
     }
   }
-  
-  }
+
+}
