@@ -1,69 +1,61 @@
-let myAlbum = Array.from(document.querySelectorAll(".photoAlbumInput"));
-const mainSection = document.getElementById("mainSection");
-const collageSection = document.getElementById("collageArea");
-let duplicateElements = [];
-let currentIndex = null;
-const toggleId = document.getElementById("buttonArea");
+const collageSection = document.getElementById("main_Section");
+const overlayDisplay = document.getElementById("big_Overlay");
+const targetPicture = document.getElementById("target_Picture");
+let currentIndex = 0; // hier wird mit zahl gearbeitet nicht mit leeren Array
 
-for (let index = 0; index < myAlbum.length; index++) {
-  const element = myAlbum[index];
-  element.addEventListener("click", toggleOverlay);
+const pictureCollection = [
+  "picture1.png",
+  "picture2.png",
+  "picture3.png",
+  "picture4.png",
+  "picture5.png",
+  "picture6.png",
+  "picture7.png",
+  "picture8.png",
+  "picture9.png",
+  "picture10.png",
+  "picture11.png",
+  "picture12.png",
+];
+
+function renderImg() {
+  for (let index = 0; index < pictureCollection.length; index++) {
+    collageSection.innerHTML += renderPicture(index);
+  }
+
+  document.querySelectorAll(".photoAlbumInput").forEach((element) => {
+    element.addEventListener("click", toggleOverlay);
+  });
 }
 
-function removeAllOverlays() {
-  duplicateElements.forEach((element) => element.remove());
-  duplicateElements = [];
+function renderPicture(index) {
+  return `<img class="photoAlbumInput" src="collagePictures/${pictureCollection[index]}">`;
 }
 
 function toggleOverlay(event) {
-  removeAllOverlays();
-  currentIndex = myAlbum.indexOf(event.target);
-  const eventDuplicate = event.target.cloneNode(true);
-  eventDuplicate.classList.add("overlayCollage");
-  contentRef.appendChild(eventDuplicate);
-  duplicateElements.push(eventDuplicate);
-  event.stopPropagation();
+  const clickedSrc = event.target.src;
+  currentIndex = pictureCollection.indexOf(clickedSrc.replace("collagePictures/", "")); //speichert den aktuellen Index
+  targetPicture.innerHTML = `<img class="targetPicture" src="${clickedSrc}">`;
+  overlayDisplay.classList.remove("d_none");
 }
 
-function nextPicture() {
-  removeAllOverlays(); // reset ist immer notwendig
-  currentIndex = (currentIndex + 1) % myAlbum.length;
-  const nextImage = myAlbum[currentIndex].cloneNode(true);
-  nextImage.classList.add("overlayCollage");
-  contentRef.appendChild(nextImage);
-  duplicateElements.push(nextImage);
+function closeOverlay() {
+  overlayDisplay.classList.add("d_none");
 }
 
-function previousPicture() {
-  removeAllOverlays(); // reset ist immer notwendig
-  currentIndex = (currentIndex - 1 + myAlbum.length) % myAlbum.length;
-  const prevImage = myAlbum[currentIndex].cloneNode(true);
-  prevImage.classList.add("overlayCollage");
-  contentRef.appendChild(prevImage);
-  duplicateElements.push(prevImage);
-}
 
-function removeDuplicate(event) {
-  if (toggleId.contains(event.target)) {
-    return; // blocked die removeAllOverlay() ausführung notwendig
+function moveForward() {
+  currentIndex++;
+  if (currentIndex >= pictureCollection.length) {
+    currentIndex = 0; 
   }
-  if (!contentRef.contains(event.target)) {
-    removeAllOverlays();
-    toggleId.classList.remove("d_none");
-  } else {
-    if (!duplicateElements.includes(event.target)) {
-      toggleId.classList.remove("d_none");
-      removeAllOverlays();
-    }
-  }
+  targetPicture.innerHTML = `<img class="targetPicture" src="collagePictures/${pictureCollection[currentIndex]}">`;
 }
 
-mainSection.addEventListener("click", removeDuplicate);
-collageSection.addEventListener("click", removeDuplicate);
-
-// console.log(currentIndex); // angeklickter index
-// console.log(eventDuplicate); // angeklickter dom wert
-// console.log(duplicateElements); // array wert mit geklicktem datentyp
-// toggleId.classList.add('d_none');
-// toggleId.classList.remove('d_none');
-// console.log(myAlbum); //  array mit 12 datentyp länge
+function moveBackward() {
+  currentIndex--; 
+  if (currentIndex < 0) {
+    currentIndex = pictureCollection.length - 1; 
+  }
+  targetPicture.innerHTML = `<img class="targetPicture" src="collagePictures/${pictureCollection[currentIndex]}">`;
+}

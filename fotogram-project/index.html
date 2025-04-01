@@ -6,21 +6,23 @@
     <link rel="stylesheet" href="style.css" />
     <title>Fotogram</title>
   </head>
-  <body>
+  <body onload="renderImg()">
     <header>
       <div class="fotogramLogo"></div>
     </header>
-    <main id="mainSection">
-      <div class="headlineArea" id="headlineArea"></div>
-      <div id="collageArea" class="collageArea"></div>
+    <div class="bigOverlay d_none" id="big_Overlay">
+      <div id="close_Overlay" onclick="closeOverlay()">x</div>
+      <div id="target_Picture"></div>
       <div class="buttonArea" id="buttonArea">
+        <button id="button_Minus" onclick="moveBackward()">-</button>
+        <div class="inputArea"></div>
+        <button id="button_Plus" onclick="moveForward()">+</button>
       </div>
-    </main>
+    </div>
+    <div id="main_Section" class="mainSection"></div>
     <footer>
-      <div class="fotogramLogo"></div>
+      <div id="fotogram_logo" class="fotogramLogo"></div>
     </footer>
   </body>
-  <script src="renderImage.js" defer></script>
   <script src="logic.js" defer></script>
-  <script src="renderButton.js" defer></script>
 </html>
